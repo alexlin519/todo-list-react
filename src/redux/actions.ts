@@ -10,21 +10,19 @@ import {
     UpdateItemAction,
 } from './types';
 
-
-
 //action creators
 //用户输入名字 如何转换为 action obj?
 
-export const AddItem = (name: string):AddItemAction =>{
-    return{
+export const AddItem = (name: string): AddItemAction => {
+    return {
         type: todoListActionTypes.ADD_ITEM,
-        payload:{
-            name:name,
-            id:uuid(),
-            createdOn: new Date()
-        }
-    }
-}
+        payload: {
+            name: name,
+            id: uuid(),
+            createdOn: new Date(),
+        },
+    };
+};
 
 export const deleteItem = (id: string): DeleteItemAction => {
     return {
@@ -59,7 +57,13 @@ export const toggleItem = (id: string): ToggleItemAction => {
         },
     };
 };
-export const updateItem = ({id,name,}: {id: string;name: string;}): UpdateItemAction => {
+export const updateItem = ({
+    id,
+    name,
+}: {
+    id: string;
+    name: string;
+}): UpdateItemAction => {
     return {
         type: todoListActionTypes.UPDATE_ITEM,
         payload: {
