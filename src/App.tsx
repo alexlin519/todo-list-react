@@ -1,13 +1,25 @@
 import React from 'react';
 
-import ChildComponent from './ChildComponent';
+import TodoList from './components/TodoList';
 
-const App: React.FC = () => {
+//在app里面写render!!
+const App: React.FC = (): JSX.Element => {
+    const header = (
+        <div className="title-div">
+            <span className="title">
+                <a href="#">Your Todo List</a>
+            </span>
+            <span className="author">
+                <a href="https://cgao.info">&nbsp; Chuntong Gao &nbsp;</a>
+            </span>
+        </div>
+    );
+
     return (
-        <React.Fragment>
-            <h1>Hello World</h1>
-            <ChildComponent message={'Welcome to React'} />
-        </React.Fragment>
+        <div className="app-container">
+            {header}
+            <TodoList />
+        </div>
     );
 };
 
